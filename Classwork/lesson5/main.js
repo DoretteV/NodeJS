@@ -1,6 +1,6 @@
 "use strict";
 
-const routeResponseMap = {
+const routeResponseMap = {  //define mapping of routes with responses
   "/info": "<h1>Info Page</h1>",    //localhost:300/info
   "/contact": "<h1>Contact Us</h1>",
   "/about": "<h1>Learn More About Us.</h1>",
@@ -18,7 +18,7 @@ const port = 3000,
     if (routeResponseMap[req.url]) {    //i entered a route like /info or /contact or /about or....
       res.end(routeResponseMap[req.url]);
     } else {    //i did not enter a route inside the above selection, i just entered localhost:3000
-      res.end("<h1>Welcome!</h1>");
+      res.end("<h1>Welcome!</h1>"); //respond with default HTML
     }
   });
 app.listen(port);
