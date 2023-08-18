@@ -9,6 +9,7 @@
   "author": "\"Jon Wexler",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "http-status-codes": "^2.2.0"
   }
 }
