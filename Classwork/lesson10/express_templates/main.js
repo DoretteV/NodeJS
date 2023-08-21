@@ -2,11 +2,11 @@
 
 const express = require("express"),
   app = express(),
-  homeController = require("./controllers/homeController"),
-  layouts = require("express-ejs-layouts");
+  homeController = require("./controllers/homeController"),     //require homeController.js
+  layouts = require("express-ejs-layouts");     //require layouts
 
-app.set("port", process.env.PORT || 3000);
-app.set("view engine", "ejs");
+app.set("port", process.env.PORT || 3000);      //listening on port 3000
+app.set("view engine", "ejs");              //telling express.js to set its view engine as ejs
 
 app.use(layouts);   //letting express.js know to use this package as an additional middleware layer
 app.use(
