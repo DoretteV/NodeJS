@@ -9,16 +9,16 @@ app.use(
   express.urlencoded({
     extended: false
   })
-);
+);            //tell express.js application to parse URL-encoded data
 app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log(`request made to: ${req.url}`);
-  next();
+app.use((req, res, next) => {     //define a middleware function
+  console.log(`request made to: ${req.url}`); //log the requests path to console
+  next();   //call the next function
 });
 
-app.post("/", (req, res) => {
-  console.log(req.body);
+app.post("/", (req, res) => {   //create a new post route
+  console.log(req.body);        //log the request body
   console.log(req.query);
   res.send("POST Successful!");
 });
