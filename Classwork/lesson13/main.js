@@ -8,7 +8,7 @@ const express = require("express"),
   homeController = require("./controllers/homeController"),
   layouts = require("express-ejs-layouts"),
   //listing 13.5 
-  MongoDB = require("mongodb").MongoClient,
+  MongoDB = require("mongodb").MongoClient, //require the mongodb module
   dbURL = "mongodb://localhost:27017",
   dbName = "recipe_db";
 //set up a connection to the mongo db
