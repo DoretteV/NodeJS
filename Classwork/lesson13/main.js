@@ -1,5 +1,3 @@
-//13.3 13.4 in cmd
-
 "use strict";
 
 const express = require("express"),
@@ -26,14 +24,14 @@ MongoDB.connect(
         console.log(data);    //print the results to the console
       });
 //listing 13.6
-    db.collection("contacts").insert(
+    db.collection("contacts").insert( //insert a new contact into the database
       {
         name: "Freddie Mercury",
         email: "fred@queen.com"
       },
-      (error, db) => {
+      (error, db) => {    
         if (error) throw error;
-        console.log(db);
+        console.log(db);  //log the resulting errors or saved item
       }
     );
   }
