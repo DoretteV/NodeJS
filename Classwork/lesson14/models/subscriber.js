@@ -1,7 +1,7 @@
 "use strict";
-//listing 14.3
-const mongoose = require("mongoose"),   //create a new schema with mongoose.Schema
-  subscriberSchema = mongoose.Schema({
+//listing 14.5
+const mongoose = require("mongoose"),   
+  subscriberSchema = mongoose.Schema({    //create a new schema with mongoose.Schema
     name: String,       //add schema properties
     email: String,
     zipCode: Number
