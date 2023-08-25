@@ -1,0 +1,29 @@
+<h2>Users Table</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Zip Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+    <tr>
+      <td>
+        <!-- listing 19.6
+        embed the users name and ID in HTML -->
+        <a href="<%= `/users/${user._id}` %>">
+          <%= user.fullName %>
+        </a>
+      </td>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= user.zipCode %>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
