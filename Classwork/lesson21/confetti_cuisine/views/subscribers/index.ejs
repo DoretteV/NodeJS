@@ -1,0 +1,37 @@
+<h2 class="center">Subscribers Table</h2>
+<!-- add a table to the index page -->
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- generate a new row for each subscriber -->
+    <% subscribers.forEach(subscriber => { %>
+    <tr>
+      <td>
+        <!-- wrap the subscribers name in an anchor tag -->
+        <a href="<%= `/subscribers/${subscriber._id}` %>">
+          <%= subscriber.name %>
+        </a>
+      </td>
+      <td>
+        <%= subscriber.email %>
+      </td>
+      <td>
+        <a href="<%=`subscribers/${subscriber._id}/edit`%>">
+          Edit
+        </a>
+      </td>
+      <td>
+        <!-- add a delete link -->
+        <a href="<%= `subscribers/${subscriber._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')" a>Delete</a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
