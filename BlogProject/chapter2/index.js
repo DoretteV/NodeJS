@@ -1,6 +1,6 @@
 const express = require("express"); // require express module
-const path = require('path')
 const app = express(); // calls express function to start new Express app
+const path = require('path')
 app.use(express.static('public'))
 
 app.listen(3000, () => {
