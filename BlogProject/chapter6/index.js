@@ -32,22 +32,18 @@ app.get('/posts/new',(req,res)=>{
   res.render('create')
   });  //open the create view
 
-app.post('/posts/store', async (req, res) => {  // im receiving form data from the html form via a post request
-  //do the create of a new blog entry
-  await BlogPost.create(req.body, (error, blogpost) => {
-  res.redirect('/');
-  })
-});
+  app.get('/post/:id', async (req, res) => {
+    const blogpost = await BlogPost.findById(req.params.id)
+    res.render('post', {
+        blogpost
+    })
+})
 
-app.get('/post/:id',async (req,res)=>{
-  const blogpost = await BlogPost.findById(req.params.id)
-  .then(blogspot => {
-    res.redirect('/')
-  }) //when done redirect to homepage
-  .catch(error => {
-    console.log(error)
-  })
-});
+app.post('/posts/store', (req, res) => {
+    BlogPost.create(req.body)
+        .then(blogpost => res.redirect('/'))
+        .catch(error => console.log(error))
+})
 
 app.listen(4000, () => {
   console.log("App listening on port 4000");
