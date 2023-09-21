@@ -15,6 +15,6 @@
     "express-ejs-layouts": "^2.5.1",
     "http-status-codes": "^2.2.0",
     "mongodb": "^3.6.3",
-    "mongoose": "^7.4.4"
+    "mongoose": "^5.4.4"
   }
 }
